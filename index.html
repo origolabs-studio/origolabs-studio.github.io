@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Origo Labs · Apps & games for iPhone and iPad</title>
+<meta name="description" content="Apps & games for iPhone and iPad, made with care. Stilldrift, Shadow, Lentia, Fasto and Aletra. Pay once. No ads.">
+<link rel="icon" href="assets/origo.png">
+<link rel="apple-touch-icon" href="assets/origo.png">
+<link rel="canonical" href="https://origolabs-studio.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Origo Labs · Apps & games for iPhone and iPad">
+<meta property="og:description" content="Stilldrift, Shadow, Lentia, Fasto and Aletra. Made with care. Pay once. No ads.">
+<meta property="og:url" content="https://origolabs-studio.github.io/">
+<meta property="og:image" content="https://origolabs-studio.github.io/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+:root{
+  --bg:#07080c; --panel:#0e1016; --panel2:#12151d; --line:rgba(255,255,255,.08);
+  --fg:#f3f4f7; --muted:#9aa0ad; --gold:#ffc46b; --violet:#8b7bff;
+  --r:28px;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:16px/1.55 Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:"Inter Tight",Inter,sans-serif;letter-spacing:-.025em;line-height:1.02}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.01em}
+
+/* glow */
+.glow{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;pointer-events:none}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(18px);background:rgba(7,8,12,.72);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Inter Tight";font-weight:600;font-size:18px}
+.brand img{width:30px;height:30px;border-radius:50%}
+.navlinks{display:flex;gap:28px;font-size:14px;color:var(--muted)}
+.navlinks a:hover{color:var(--fg)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:600;font-size:15px;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-light{background:var(--fg);color:#0b0c10}
+.btn-ghost{border:1px solid var(--line);background:rgba(255,255,255,.03)}
+.btn-ghost:hover{background:rgba(255,255,255,.07)}
+.btn svg{width:16px;height:16px}
+
+/* hero */
+.hero{position:relative;padding:110px 0 70px;text-align:center;overflow:hidden}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--muted);background:rgba(255,255,255,.03)}
+.eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold)}
+.hero h1{font-size:clamp(46px,8vw,104px);margin:26px auto 22px;max-width:980px;font-weight:600}
+.hero h1 .serif{color:var(--gold)}
+.hero p{font-size:clamp(17px,2vw,20px);color:var(--muted);max-width:620px;margin:0 auto 34px}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.icons{display:flex;justify-content:center;gap:18px;margin-top:70px;flex-wrap:wrap}
+.icons a{width:92px;height:92px;border-radius:22px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.55),0 0 0 1px var(--line);transition:transform .3s}
+.icons a:nth-child(odd){transform:translateY(14px)}
+.icons a:hover{transform:translateY(-6px) scale(1.04)}
+
+/* strip */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:30px}
+.strip .wrap{display:flex;justify-content:space-between;gap:20px;padding:22px 24px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+.strip b{color:var(--fg);font-weight:600}
+
+/* section head */
+section{padding:110px 0 0}
+.shead{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:40px;flex-wrap:wrap}
+.shead h2{font-size:clamp(36px,5vw,60px);font-weight:600;max-width:640px}
+.shead p{color:var(--muted);max-width:380px}
+
+/* cards */
+.card{position:relative;overflow:hidden;border-radius:var(--r);background:var(--panel);border:1px solid var(--line);padding:34px;transition:border-color .3s,transform .3s}
+.card:hover{border-color:rgba(255,255,255,.18)}
+.app-head{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.app-head img{width:56px;height:56px;border-radius:14px;box-shadow:0 0 0 1px var(--line)}
+.tag{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.card h3{font-size:30px;font-weight:600}
+.card .lead{font-size:clamp(22px,2.6vw,30px);font-family:"Inter Tight";font-weight:500;letter-spacing:-.02em;line-height:1.15;margin-bottom:14px}
+.card .desc{color:var(--muted);margin-bottom:24px;max-width:460px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.chips span{font-size:13px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--line);color:#cfd3db}
+.store{display:inline-flex;align-items:center;gap:10px;padding:11px 18px;border-radius:14px;background:#fff;color:#000;font-weight:600;font-size:14px}
+.store svg{width:18px;height:18px}
+.store small{display:block;font-size:10px;font-weight:500;opacity:.7;line-height:1}
+.store span{line-height:1.1}
+
+.featured{display:grid;grid-template-columns:1fr 1.15fr;gap:30px;align-items:center;padding:48px}
+.phones{display:flex;gap:14px;justify-content:center;align-items:flex-end}
+.phone{border-radius:26px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.6),0 0 0 1px var(--line);flex:1;max-width:190px}
+.phone:nth-child(2){transform:translateY(-26px)}
+
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px;margin-top:20px}
+.span6{grid-column:span 6}.span3{grid-column:span 3}.span2{grid-column:span 2}
+.shadowcard{display:grid;grid-template-columns:.9fr 1.3fr;gap:30px;align-items:center}
+.wide{border-radius:18px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.6),0 0 0 1px var(--line)}
+.mini .phone{max-width:none;margin-top:6px;border-radius:22px}
+.mini{display:flex;flex-direction:column}
+.mini .desc{margin-bottom:18px}
+.mini .shot{margin-top:auto;padding-top:22px}
+.mini .shot .phone{transform:translateY(40px);margin-bottom:-40px;height:380px}
+.mini .shot .phone img{width:100%;height:100%;object-fit:cover;object-position:top}
+
+/* values */
+.values{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.value{padding:28px;border-radius:22px;background:var(--panel);border:1px solid var(--line)}
+.value .ico{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(255,196,107,.1);color:var(--gold);margin-bottom:18px;font-size:20px}
+.value h4{font-family:"Inter Tight";font-size:19px;margin-bottom:6px;letter-spacing:-.01em}
+.value p{color:var(--muted);font-size:15px}
+
+/* follow */
+.follow{position:relative;overflow:hidden;text-align:center;padding:90px 30px;border-radius:36px;background:linear-gradient(180deg,#11131c,#0b0c12);border:1px solid var(--line)}
+.follow h2{font-size:clamp(38px,6vw,72px);font-weight:600;margin-bottom:16px}
+.follow p{color:var(--muted);margin-bottom:34px}
+.socials{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.social{display:flex;align-items:center;gap:12px;padding:14px 22px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid var(--line);font-weight:600}
+.social:hover{background:rgba(255,255,255,.08)}
+.social svg{width:22px;height:22px}
+.social small{display:block;color:var(--muted);font-weight:500;font-size:12px}
+
+footer{padding:80px 0 50px;color:var(--muted);font-size:14px}
+footer .cols{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:30px;border-top:1px solid var(--line);padding-top:40px}
+footer h5{color:var(--fg);font-size:13px;margin-bottom:12px;font-weight:600}
+footer li{list-style:none;margin-bottom:8px}
+footer ul{padding:0}
+footer a:hover{color:var(--fg)}
+
+@media (max-width:900px){
+  .featured,.shadowcard{grid-template-columns:1fr;padding:32px}
+  .span3,.span2{grid-column:span 6}
+  .values{grid-template-columns:1fr 1fr}
+  .navlinks{display:none}
+  footer .cols{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .hero{padding:80px 0 50px}
+  .icons a{width:62px;height:62px;border-radius:15px}
+  .icons{gap:12px}
+  .card{padding:26px}
+  .values{grid-template-columns:1fr}
+  .phone{border-radius:18px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#"><img src="assets/origo.png" alt="">Origo Labs</a>
+    <div class="navlinks"><a href="#apps">Apps</a><a href="#why">Why Origo</a><a href="#follow">Follow</a></div>
+    <a class="btn btn-light" href="#apps">Get the apps</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="glow" style="width:620px;height:620px;background:#6d4dff;left:50%;top:-260px;transform:translateX(-50%)"></div>
+  <div class="glow" style="width:380px;height:380px;background:#ff9d4d;right:-120px;top:160px;opacity:.28"></div>
+  <div class="glow" style="width:360px;height:360px;background:#2bd4c4;left:-140px;top:240px;opacity:.22"></div>
+  <div class="wrap" style="position:relative">
+    <span class="eyebrow"><i></i>Apps & games for iPhone and iPad</span>
+    <h1>Apps you'll <span class="serif">love</span> to open.</h1>
+    <p>Games, tools and quiet moments, made with care for iPhone and iPad. Pay once. No ads. No subscriptions.</p>
+    <div class="cta">
+      <a class="btn btn-light" href="#apps">Explore the apps
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost" href="#follow">Follow Origo Labs</a>
+    </div>
+    <div class="icons">
+      <a href="#stilldrift"><img src="assets/icon-stilldrift.png" alt="Stilldrift"></a>
+      <a href="#shadow"><img src="assets/icon-shadow.png" alt="Shadow"></a>
+      <a href="#lentia"><img src="assets/icon-lentia.png" alt="Lentia"></a>
+      <a href="#fasto"><img src="assets/icon-fasto.png" alt="Fasto"></a>
+      <a href="#aletra"><img src="assets/icon-aletra.png" alt="Aletra"></a>
+    </div>
+  </div>
+</header>
+
+<div class="strip"><div class="wrap">
+  <span><b>5</b> apps on the App Store</span><span><b>Pay once</b>, keep it forever</span><span><b>No ads</b>, ever</span><span><b>6</b> languages</span><span><b>iPhone, iPad</b> & Apple Watch</span>
+</div></div>
+
+<section id="apps">
+  <div class="wrap">
+    <div class="shead">
+      <h2>One studio. <span class="serif">Very different</span> apps.</h2>
+      <p>A calm planet to fly over, a puzzle made of light, and the everyday tools we wished existed.</p>
+    </div>
+
+    <article class="card featured" id="stilldrift">
+      <div class="glow" style="width:420px;height:420px;background:#ff9d4d;left:-120px;bottom:-200px;opacity:.25"></div>
+      <div style="position:relative">
+        <div class="app-head"><img src="assets/icon-stilldrift.png" alt=""><div><div class="tag">Game · Relax</div><h3>Stilldrift</h3></div></div>
+        <p class="lead">A calm planet you fly with your finger. No score, no way to lose.</p>
+        <p class="desc">Forests, coasts, neon cities and dream worlds with two moons, with music that composes itself as you fly. Breathe with your flock, focus, or drift off to sleep.</p>
+        <div class="chips"><span>5 planets</span><span>Generative music</span><span>Sleep & focus</span><span>Apple Health</span></div>
+        <a class="store" href="https://apps.apple.com/app/id6821407286"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.7-1-2.7-4.1zM13.9 5c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg><span><small>Download on the</small>App Store</span></a>
+      </div>
+      <div class="phones">
+        <div class="phone"><img src="assets/shot-stilldrift-2.jpg" alt="" loading="lazy"></div>
+        <div class="phone"><img src="assets/shot-stilldrift-1.jpg" alt="" loading="lazy"></div>
+        <div class="phone"><img src="assets/shot-stilldrift-3.jpg" alt="" loading="lazy"></div>
+      </div>
+    </article>
+
+    <div class="grid">
+      <article class="card span6 shadowcard" id="shadow">
+        <div class="glow" style="width:380px;height:380px;background:#c85bff;right:-100px;top:-160px;opacity:.25"></div>
+        <div style="position:relative">
+          <div class="app-head"><img src="assets/icon-shadow.png" alt=""><div><div class="tag">Puzzle game</div><h3>Shadow</h3></div></div>
+          <p class="lead">Move the sun. Walk the shadow.</p>
+          <p class="desc">You never touch the hero. Drag the light and the shadow it casts becomes the bridge. 28 light puzzles across 7 planets, plus a new level every day.</p>
+          <a class="store" href="https://apps.apple.com/app/id6826522918"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.7-1-2.7-4.1zM13.9 5c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg><span><small>Download on the</small>App Store</span></a>
+        </div>
+        <div class="wide"><img src="assets/shot-shadow-1.jpg" alt="" loading="lazy"></div>
+      </article>
+
+      <article class="card span2 mini" id="lentia">
+        <div class="app-head"><img src="assets/icon-lentia.png" alt=""><div><div class="tag">Health · Utility</div><h3>Lentia</h3></div></div>
+        <p class="lead" style="font-size:22px">Never wear your contacts past their date.</p>
+        <p class="desc">Days left on each eye, wear time today, and when to restock. On iPhone, iPad and Apple Watch.</p>
+        <a class="store" style="align-self:flex-start" href="https://apps.apple.com/app/id6826833025"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.7-1-2.7-4.1zM13.9 5c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg><span><small>Download on the</small>App Store</span></a>
+        <div class="shot"><div class="phone"><img src="assets/shot-lentia-1.jpg" alt="" loading="lazy"></div></div>
+      </article>
+
+      <article class="card span2 mini" id="fasto">
+        <div class="app-head"><img src="assets/icon-fasto.png" alt=""><div><div class="tag">Health · Fasting</div><h3>Fasto</h3></div></div>
+        <p class="lead" style="font-size:22px">Know exactly where your fast is, hour by hour.</p>
+        <p class="desc">Eight fasting phases, the study behind each one, your history and milestones. No account needed.</p>
+        <a class="store" style="align-self:flex-start" href="https://apps.apple.com/app/id6797804062"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.7-1-2.7-4.1zM13.9 5c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg><span><small>Download on the</small>App Store</span></a>
+        <div class="shot"><div class="phone"><img src="assets/shot-fasto-1.jpg" alt="" loading="lazy"></div></div>
+      </article>
+
+      <article class="card span2 mini" id="aletra">
+        <div class="app-head"><img src="assets/icon-aletra.png" alt=""><div><div class="tag">Tools · Sensors</div><h3>Aletra</h3></div></div>
+        <p class="lead" style="font-size:22px">Five iPhone sensors at once, logged and exported.</p>
+        <p class="desc">Magnetic field, sound, pressure, vibration and light, recorded together. Export it all to CSV.</p>
+        <a class="store" style="align-self:flex-start" href="https://apps.apple.com/app/id6805894740"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.7-1-2.7-4.1zM13.9 5c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg><span><small>Download on the</small>App Store</span></a>
+        <div class="shot"><div class="phone"><img src="assets/shot-aletra-1.jpg" alt="" loading="lazy"></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="shead"><h2>Made with <span class="serif">care</span>, not tricks.</h2><p>Every app follows the same rules, from the first sketch to the last update.</p></div>
+    <div class="values">
+      <div class="value"><div class="ico">◎</div><h4>Pay once</h4><p>Buy it and it's yours. No subscriptions, no hidden paywalls.</p></div>
+      <div class="value"><div class="ico">✕</div><h4>No ads</h4><p>Nothing jumps in front of what you came to do.</p></div>
+      <div class="value"><div class="ico">◐</div><h4>Native & fast</h4><p>Built for iPhone and iPad, with Apple Watch, widgets and Siri where it helps.</p></div>
+      <div class="value"><div class="ico">A</div><h4>6 languages</h4><p>English, Spanish, German, French, Italian and Portuguese.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="follow">
+  <div class="wrap">
+    <div class="follow">
+      <div class="glow" style="width:520px;height:520px;background:#6d4dff;left:50%;top:-320px;transform:translateX(-50%);opacity:.4"></div>
+      <div style="position:relative">
+        <h2>Follow <span class="serif">Origo Labs</span></h2>
+        <p>New apps, updates and behind the scenes.</p>
+        <div class="socials">
+          <a class="social" href="https://www.tiktok.com/@origolabs"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.4 2.2 1.7 3.6 3.9 3.8v3c-1.4.1-2.7-.3-3.9-1v6.2c0 3.6-2.6 6-5.8 6-3.3 0-5.8-2.6-5.8-5.8 0-3.6 3.2-6.3 7-5.6v3.2c-1.9-.6-3.8.6-3.8 2.5 0 1.5 1.2 2.6 2.6 2.6 1.6 0 2.7-1.1 2.7-3.2V3h3.1z"/></svg><span>TikTok<small>@origolabs</small></span></a>
+          <a class="social" href="https://www.youtube.com/@origo-labs"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 8.2c-.2-1.6-1-2.7-2.6-2.9C17 5 12 5 12 5s-5 0-7.4.3C3 5.5 2.2 6.6 2 8.2 1.8 9.8 1.8 12 1.8 12s0 2.2.2 3.8c.2 1.6 1 2.7 2.6 2.9C7 19 12 19 12 19s5 0 7.4-.3c1.6-.2 2.4-1.3 2.6-2.9.2-1.6.2-3.8.2-3.8s0-2.2-.2-3.8zM10 15V9l5.2 3L10 15z"/></svg><span>YouTube<small>@origo-labs</small></span></a>
+          <a class="social" href="https://www.instagram.com/origolabs.studio/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><span>Instagram<small>@origolabs.studio</small></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><a class="brand" href="#"><img src="assets/origo.png" alt="">Origo Labs</a><p style="margin-top:14px;max-width:280px">Apps & games for iPhone and iPad, made with care.</p></div>
+      <div><h5>Apps</h5><ul><li><a href="https://apps.apple.com/app/id6821407286">Stilldrift</a></li><li><a href="https://apps.apple.com/app/id6826522918">Shadow</a></li><li><a href="https://apps.apple.com/app/id6826833025">Lentia</a></li><li><a href="https://apps.apple.com/app/id6797804062">Fasto</a></li><li><a href="https://apps.apple.com/app/id6805894740">Aletra</a></li></ul></div>
+      <div><h5>Privacy & support</h5><ul><li><a href="https://luarjm.github.io/stilldrift-legal/">Stilldrift</a></li><li><a href="https://luarjm.github.io/shadow-legal/">Shadow</a></li><li><a href="https://luarjm.github.io/lentia-legal/">Lentia</a></li><li><a href="https://luarjm.github.io/fasto-legal/">Fasto</a></li><li><a href="https://luarjm.github.io/Aletra-legal/">Aletra</a></li></ul></div>
+      <div><h5>Follow</h5><ul><li><a href="https://www.tiktok.com/@origolabs">TikTok</a></li><li><a href="https://www.youtube.com/@origo-labs">YouTube</a></li><li><a href="https://www.instagram.com/origolabs.studio/">Instagram</a></li></ul></div>
+    </div>
+    <p style="margin-top:40px">© 2026 Origo Labs. Apple, the Apple logo, iPhone and iPad are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
+  </div>
+</footer>
+</body>
+</html>
