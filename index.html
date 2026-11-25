@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Origo Labs · Apps & games for iPhone and iPad</title>
-<meta name="description" content="Apps & games for iPhone and iPad, made with care. Stilldrift, Shadow, Lentia, Fasto and Aletra. Pay once. No ads.">
+<meta name="description" content="Apps & games for iPhone and iPad, made with care. Hilva, Stilldrift, Shadow, Lentia, Fasto and Aletra. Pay once. No ads.">
 <link rel="icon" href="assets/origo.png">
 <link rel="apple-touch-icon" href="assets/origo.png">
 <link rel="canonical" href="https://origolabs-studio.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Origo Labs · Apps & games for iPhone and iPad">
-<meta property="og:description" content="Stilldrift, Shadow, Lentia, Fasto and Aletra. Made with care. Pay once. No ads.">
+<meta property="og:description" content="New: Hilva, think out loud and get it in order. Plus Stilldrift, Shadow, Lentia, Fasto and Aletra. Made with care. Pay once. No ads.">
 <meta property="og:url" content="https://origolabs-studio.github.io/">
 <meta property="og:image" content="https://origolabs-studio.github.io/assets/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -129,14 +129,45 @@ footer li{list-style:none;margin-bottom:8px}
 footer ul{padding:0}
 footer a:hover{color:var(--fg)}
 
+/* hilva (nueva) */
+.eyebrow.new{color:var(--muted)}
+.eyebrow.new i{background:#5fd892;box-shadow:0 0 12px #5fd892}
+.eyebrow.new b{color:var(--fg);font-weight:600}
+.hilvacard{display:grid;grid-template-columns:1fr 1.15fr;gap:34px;align-items:center;padding:48px;margin-bottom:20px;background:linear-gradient(160deg,#f6f1e8,#ece6da);border-color:rgba(255,255,255,.25);color:#1d1b17}
+.hilvacard:hover{border-color:rgba(255,255,255,.45)}
+.hilvacard .tag{color:#6b6457}
+.hilvacard .tag b{color:#22693f;font-weight:700}
+.hilvacard .lead em{font-style:normal;color:#22693f}
+.hilvacard .desc{color:#4f493f}
+.hilvacard .chips span{background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.08);color:#3d382f}
+.hilvacard .store{background:#1d1b17;color:#fff}
+.hilvacard .app-head img{box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+.hilvacard .phone{box-shadow:0 30px 60px rgba(60,45,20,.25),0 0 0 1px rgba(0,0,0,.06)}
+.demo{display:flex;align-items:center;gap:12px;margin:0 0 26px}
+.bubble,.outline{background:#fff;border-radius:16px;padding:14px 16px;box-shadow:0 10px 30px rgba(60,45,20,.12);font-size:14px;line-height:1.4}
+.bubble{max-width:210px;font-style:italic;color:#3d382f}
+.wave{display:flex;gap:3px;align-items:center;height:16px;margin-bottom:6px}
+.wave i{width:3px;border-radius:2px;background:#c4513b}
+.arrow{color:#22693f;font-size:26px;font-weight:700}
+.outline{min-width:220px}
+.outline small{display:block;font:600 11px/1 ui-monospace,Menlo,monospace;letter-spacing:.1em;color:#6b6457;margin-bottom:8px}
+.outline div{display:flex;align-items:center;gap:8px;margin:5px 0}
+.outline .cb{flex:none;width:13px;height:13px;border:1.5px solid #8a8377;border-radius:3px}
+.outline .dot{flex:none;width:5px;height:5px;border-radius:50%;background:#aaa;margin:0 4px}
+.pill{margin-left:auto;font-size:11px;padding:2px 7px;border-radius:6px;background:#fbe3d3;color:#a5462a}
+.pill.g{background:#eee9df;color:#5d574c}
+
 @media (max-width:900px){
-  .featured,.shadowcard{grid-template-columns:1fr;padding:32px}
+  .featured,.shadowcard,.hilvacard{grid-template-columns:1fr;padding:32px}
+  .demo{flex-wrap:wrap}
   .span3,.span2{grid-column:span 6}
   .values{grid-template-columns:1fr 1fr}
   .navlinks{display:none}
   footer .cols{grid-template-columns:1fr 1fr}
 }
 @media (max-width:560px){
+  .demo{flex-direction:column;align-items:flex-start}
+  .demo .arrow{transform:rotate(90deg);margin-left:24px}
   .wrap{padding:0 16px}
   .hero{padding:80px 0 50px}
   .icons a{width:62px;height:62px;border-radius:15px}
@@ -162,7 +193,7 @@ footer a:hover{color:var(--fg)}
   <div class="glow" style="width:380px;height:380px;background:#ff9d4d;right:-120px;top:160px;opacity:.28"></div>
   <div class="glow" style="width:360px;height:360px;background:#2bd4c4;left:-140px;top:240px;opacity:.22"></div>
   <div class="wrap" style="position:relative">
-    <span class="eyebrow"><i></i>Apps & games for iPhone and iPad</span>
+    <a class="eyebrow new" href="#hilva"><i></i><b>New: Hilva</b> · think out loud, get it in order →</a>
     <h1>Apps you'll <span class="serif">love</span> to open.</h1>
     <p>Games, tools and quiet moments, made with care for iPhone and iPad. Pay once. No ads. No subscriptions.</p>
     <div class="cta">
@@ -171,6 +202,7 @@ footer a:hover{color:var(--fg)}
       <a class="btn btn-ghost" href="#follow">Follow Origo Labs</a>
     </div>
     <div class="icons">
+      <a href="#hilva"><img src="assets/icon-hilva.png" alt="Hilva"></a>
       <a href="#stilldrift"><img src="assets/icon-stilldrift.png" alt="Stilldrift"></a>
       <a href="#shadow"><img src="assets/icon-shadow.png" alt="Shadow"></a>
       <a href="#lentia"><img src="assets/icon-lentia.png" alt="Lentia"></a>
@@ -181,15 +213,39 @@ footer a:hover{color:var(--fg)}
 </header>
 
 <div class="strip"><div class="wrap">
-  <span><b>5</b> apps on the App Store</span><span><b>Pay once</b>, keep it forever</span><span><b>No ads</b>, ever</span><span><b>6</b> languages</span><span><b>iPhone, iPad</b> & Apple Watch</span>
+  <span><b>6</b> apps on the App Store</span><span><b>Pay once</b>, keep it forever</span><span><b>No ads</b>, ever</span><span><b>6</b> languages</span><span><b>iPhone, iPad</b> & Apple Watch</span>
 </div></div>
 
 <section id="apps">
   <div class="wrap">
     <div class="shead">
       <h2>One studio. <span class="serif">Very different</span> apps.</h2>
-      <p>A calm planet to fly over, a puzzle made of light, and the everyday tools we wished existed.</p>
+      <p>A place for your thoughts, a calm planet to fly over, a puzzle made of light, and the everyday tools we wished existed.</p>
     </div>
+
+    <article class="card hilvacard" id="hilva">
+      <div>
+        <div class="app-head"><img src="assets/icon-hilva.png" alt=""><div><div class="tag"><b>New</b> · Productivity</div><h3>Hilva</h3></div></div>
+        <p class="lead">Think out loud. <em>Hilva sorts it out.</em></p>
+        <p class="desc">Talk for a minute. You get a clear summary, your tasks with their day and reminder, and every idea on its own branch. Transcribed on your iPhone. No typing.</p>
+        <div class="demo" aria-hidden="true">
+          <div class="bubble"><div class="wave"><i style="height:6px"></i><i style="height:12px"></i><i style="height:16px"></i><i style="height:9px"></i><i style="height:14px"></i><i style="height:7px"></i><i style="height:15px"></i><i style="height:10px"></i><i style="height:5px"></i><i style="height:12px"></i><i style="height:8px"></i></div>“Call the plumber tomorrow, light countertop, and Lucía’s proposal on Friday…”</div>
+          <div class="arrow">→</div>
+          <div class="outline"><small>✦ KITCHEN REMODEL</small>
+            <div><span class="cb"></span>Call the plumber<span class="pill">tomorrow</span></div>
+            <div><span class="dot"></span>Light countertop</div>
+            <div><span class="cb"></span>Proposal for Lucía<span class="pill g">Fri</span></div>
+          </div>
+        </div>
+        <div class="chips"><span>Voice to outline</span><span>Tasks with reminders</span><span>Apple Watch</span><span>On-device AI</span></div>
+        <a class="store" href="https://apps.apple.com/app/id6836235411"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.7-1-2.7-4.1zM13.9 5c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg><span><small>Download on the</small>App Store</span></a>
+      </div>
+      <div class="phones">
+        <div class="phone"><img src="assets/shot-hilva-1.jpg" alt="Recording a voice note in Hilva" loading="lazy"></div>
+        <div class="phone"><img src="assets/shot-hilva-2.jpg" alt="A voice note with its summary and tasks" loading="lazy"></div>
+        <div class="phone"><img src="assets/shot-hilva-3.jpg" alt="The Agenda with today's and overdue tasks" loading="lazy"></div>
+      </div>
+    </article>
 
     <article class="card featured" id="stilldrift">
       <div class="glow" style="width:420px;height:420px;background:#ff9d4d;left:-120px;bottom:-200px;opacity:.25"></div>
@@ -280,8 +336,8 @@ footer a:hover{color:var(--fg)}
   <div class="wrap">
     <div class="cols">
       <div><a class="brand" href="#"><img src="assets/origo.png" alt="">Origo Labs</a><p style="margin-top:14px;max-width:280px">Apps & games for iPhone and iPad, made with care.</p></div>
-      <div><h5>Apps</h5><ul><li><a href="https://apps.apple.com/app/id6821407286">Stilldrift</a></li><li><a href="https://apps.apple.com/app/id6826522918">Shadow</a></li><li><a href="https://apps.apple.com/app/id6826833025">Lentia</a></li><li><a href="https://apps.apple.com/app/id6797804062">Fasto</a></li><li><a href="https://apps.apple.com/app/id6805894740">Aletra</a></li></ul></div>
-      <div><h5>Privacy & support</h5><ul><li><a href="https://luarjm.github.io/stilldrift-legal/">Stilldrift</a></li><li><a href="https://luarjm.github.io/shadow-legal/">Shadow</a></li><li><a href="https://luarjm.github.io/lentia-legal/">Lentia</a></li><li><a href="https://luarjm.github.io/fasto-legal/">Fasto</a></li><li><a href="https://luarjm.github.io/Aletra-legal/">Aletra</a></li></ul></div>
+      <div><h5>Apps</h5><ul><li><a href="https://apps.apple.com/app/id6836235411">Hilva</a></li><li><a href="https://apps.apple.com/app/id6821407286">Stilldrift</a></li><li><a href="https://apps.apple.com/app/id6826522918">Shadow</a></li><li><a href="https://apps.apple.com/app/id6826833025">Lentia</a></li><li><a href="https://apps.apple.com/app/id6797804062">Fasto</a></li><li><a href="https://apps.apple.com/app/id6805894740">Aletra</a></li></ul></div>
+      <div><h5>Privacy & support</h5><ul><li><a href="https://luarjm.github.io/hilva-legal/privacy-policy.html">Hilva</a></li><li><a href="https://luarjm.github.io/stilldrift-legal/">Stilldrift</a></li><li><a href="https://luarjm.github.io/shadow-legal/">Shadow</a></li><li><a href="https://luarjm.github.io/lentia-legal/">Lentia</a></li><li><a href="https://luarjm.github.io/fasto-legal/">Fasto</a></li><li><a href="https://luarjm.github.io/Aletra-legal/">Aletra</a></li></ul></div>
       <div><h5>Follow</h5><ul><li><a href="https://www.tiktok.com/@origolabs">TikTok</a></li><li><a href="https://www.youtube.com/@origo-labs">YouTube</a></li><li><a href="https://www.instagram.com/origolabs.studio/">Instagram</a></li><li><a href="https://x.com/Origo_Labs">X</a></li></ul></div>
     </div>
     <p style="margin-top:40px">© 2026 Origo Labs. Apple, the Apple logo, iPhone and iPad are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
